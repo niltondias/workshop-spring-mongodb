@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 import br.com.finework.workshopmongo.domain.User;
@@ -34,6 +35,17 @@ public class UserService {
     public void delete(String id) {
         findById(id);
         repo.deleteById(id);
+    }
+
+    public User update(User obj) {
+        User newObj = findById(obj.getId());
+        updatedata(newObj, obj);
+        return repo.save(newObj);
+    }
+
+    private void updatedata(User newObj, User obj) {
+        newObj.setName(obj.getName());
+        newObj.setEmail(obj.getEmail());
     }
 
     public User fromDto(UserDTO objDto) {
