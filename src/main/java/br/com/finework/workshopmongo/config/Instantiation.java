@@ -12,7 +12,6 @@ import br.com.finework.workshopmongo.domain.Post;
 import br.com.finework.workshopmongo.domain.User;
 import br.com.finework.workshopmongo.dto.AuthorDTO;
 import br.com.finework.workshopmongo.dto.CommentDTO;
-import br.com.finework.workshopmongo.dto.UserDTO;
 import br.com.finework.workshopmongo.repository.PostRepository;
 import br.com.finework.workshopmongo.repository.UserRepository;
 
